@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const board = new Board(appContainerRef);
   const game = new Game({ board });
-
+  
   game.init();
+  
 });

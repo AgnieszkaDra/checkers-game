@@ -1,15 +1,4 @@
-import { Game } from "./modules/game.js";
-import { Board } from "./modules/board.js";
 
-document.addEventListener("DOMContentLoaded", function () {
-  const appContainerRef = document.getElementById("app");
-
-  if (!appContainerRef) {
-    throw new Error("App container not found!");
-  }
-
-  const board = new Board(appContainerRef);
-  const game = new Game({ board });
 
   function Checker(color, player) {
     this.color = color;
@@ -81,13 +70,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   MoreThanArray.prototype = new Array();
+  console.log(MoreThanArray.prototype)
   MoreThanArray.prototype.shuffle = function() {
     this.sort(() => Math.random() >= 0.5 ? 1 : -1)
   }
 
-  const MoreThanArray = new MoreThanArray();
-  MoreThanArray.push(1, 2, 3, 4, 5);
-  MoreThanArray.shuffle()
-  game.init();
+  const MoreThanArray2 = new MoreThanArray();
+  console.log(MoreThanArray2)
+  MoreThanArray2.push(1, 2, 3, 4, 5);
+  MoreThanArray2.shuffle()
 
-});

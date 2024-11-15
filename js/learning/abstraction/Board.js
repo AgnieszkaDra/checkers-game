@@ -18,7 +18,7 @@ getField = function(coords) {
         throw new Error('Incorrect coords!')
     }
     const [rowIndex, colIndex] = coords;
-    return this.#fieldsList[rowIndex][colIndex]
+    return this.fieldsList[rowIndex][colIndex]
   }
 
 setField = function(coords, value) {
@@ -26,7 +26,7 @@ setField = function(coords, value) {
         throw new Error('Incorrect coords!')
     }
     const [rowIndex, colIndex] = coords;
-    this.#fieldsList[rowIndex][colIndex] = value;
+    this.fieldsList[rowIndex][colIndex] = value;
   }
 
   isCorrectCoords = function(coords) {
@@ -45,7 +45,7 @@ setField = function(coords, value) {
 }
   
 const board = new Board();
-///board.#fieldsList[1][2] = 'test'
+/// board.#fieldsList[1][2] = 'test'
 console.log(board.setField('12', 'ok'))
 // board.setField('12', 'ok')
 

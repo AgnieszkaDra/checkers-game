@@ -1,6 +1,6 @@
 export default class Board {
   
-       #fieldsList = [
+       fieldsList = [
       ['00', '01', '02', '03', '04', '05', '06', '07', '08', '09'],
       ['10', '11', '12', '13', '14', '15', '16', '17', '18', '19'],
       ['20', '21', '22', '23', '24', '25', '26', '27', '28', '29'],
@@ -18,7 +18,7 @@ getField = function(coords) {
         throw new Error('Incorrect coords!')
     }
     const [rowIndex, colIndex] = coords;
-    return this.#fieldsList[rowIndex][colIndex]
+    return this.fieldsList[rowIndex][colIndex]
   }
 
 setField = function(coords, value) {
@@ -26,39 +26,13 @@ setField = function(coords, value) {
         throw new Error('Incorrect coords!')
     }
     const [rowIndex, colIndex] = coords;
-    this.#fieldsList[rowIndex][colIndex] = value;
+    this.fieldsList[rowIndex][colIndex] = value;
   }
 
   isCorrectCoords = function(coords) {
     return /^[0-9]{2}$/i.test(coords);
   }  
-
-  #getRowIndex(coords) {
-    const [rowIndex] = coords;
-    return rowIndex
-  }
-
-  #getColIndex(coords) {
-    const [colIndex] = coords;
-    return colIndex
-  }
 }
   
 const board = new Board();
-///board.#fieldsList[1][2] = 'test'
-console.log(board.setField('12', 'ok'))
-// board.setField('12', 'ok')
-
-// we want to avoid this situation to change parameters in data
-
-// abstraction - let to hide elements(data, methods), which are unessential from the user perspective 
-
-// Visibility of properties in orient-objected programmimg
-// public - available outiside and inside objects
-// protected - available inside of object and it descendants
-// private - available only inside object
-
-// classes lets defined privates poles
-// they are defined by sign #
-// private properties can me use only inside class, but can be used outide it
-// in this way our interface(often named as API) is easier to understand
+console.log(board.getField('63'));
